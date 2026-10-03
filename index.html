@@ -1,0 +1,440 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#f5f2eb">
+  <title>Skardu Gifts | Little treasures from the high country</title>
+  <meta name="description" content="Thoughtful gifts, pantry finds and handmade treasures from Skardu and the high valleys of Baltistan.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@500;600;700&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --paper: #f5f2eb;
+      --white: #fffefa;
+      --ink: #202d27;
+      --muted: #777a70;
+      --line: #dedbd1;
+      --forest: #254b3d;
+      --forest-deep: #17372c;
+      --orange: #c26743;
+      --sun: #e9ba69;
+      --serif: "Playfair Display", Georgia, serif;
+      --sans: "DM Sans", "Segoe UI", sans-serif;
+    }
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body { margin: 0; color: var(--ink); background: var(--paper); font-family: var(--sans); font-size: 14px; }
+    button, input, select { font: inherit; }
+    button, a { -webkit-tap-highlight-color: transparent; }
+    button { color: inherit; }
+    a { color: inherit; text-decoration: none; }
+    .announcement { min-height: 34px; display: flex; align-items: center; justify-content: center; padding: 7px 16px; background: var(--forest-deep); color: #f8f5ed; font-size: 11px; letter-spacing: .04em; text-align: center; }
+    .announcement strong { color: var(--sun); font-weight: 600; margin: 0 5px; }
+    .site-header { background: var(--white); border-bottom: 1px solid var(--line); }
+    .header-inner { width: min(1320px, calc(100% - 56px)); min-height: 78px; margin: auto; display: grid; grid-template-columns: 1fr auto 1fr; align-items: center; gap: 24px; }
+    .header-nav { display: flex; align-items: center; gap: 24px; color: #4d574e; font-size: 12px; }
+    .header-nav a, .footer-links a { transition: color .18s ease; }
+    .header-nav a:hover, .footer-links a:hover { color: var(--orange); }
+    .brand { display: flex; align-items: center; gap: 9px; justify-self: center; color: var(--forest-deep); }
+    .brand-mark { width: 32px; height: 32px; }
+    .brand-name { color: #171717; font-size: 19px; font-weight: 700; letter-spacing: 0; line-height: 1; }
+    .brand-name small { display: inline; margin: 0 0 0 3px; color: #d69b24; font-size: inherit; font-weight: 700; letter-spacing: 0; }
+    .header-actions { display: flex; justify-content: flex-end; align-items: center; gap: 12px; }
+    .icon-button { position: relative; width: 38px; height: 38px; display: grid; place-items: center; border: 0; border-radius: 50%; background: transparent; cursor: pointer; transition: background .18s ease; }
+    .icon-button:hover { background: var(--paper); }
+    .icon-button svg { width: 19px; height: 19px; fill: none; stroke: currentColor; stroke-width: 1.6; stroke-linecap: round; stroke-linejoin: round; }
+    .cart-count { position: absolute; top: 1px; right: 0; min-width: 17px; height: 17px; padding: 0 4px; display: grid; place-items: center; background: var(--orange); border: 2px solid var(--white); border-radius: 20px; color: white; font-size: 9px; }
+    .mobile-menu { display: none; }
+    .hero { position: relative; isolation: isolate; min-height: 320px; overflow: hidden; display: flex; align-items: center; color: white; background: #526c60; }
+    .hero::before { position: absolute; z-index: -2; inset: 0; content: ""; background: url("https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?auto=format&fit=crop&w=2000&q=85") center 46% / cover no-repeat; transform: scale(1.015); animation: settle 1.1s ease-out both; }
+    .hero::after { position: absolute; z-index: -1; inset: 0; content: ""; background: linear-gradient(90deg, rgba(18, 37, 30, .78) 0%, rgba(25, 46, 38, .55) 44%, rgba(24, 45, 37, .08) 100%); }
+    .hero-content { width: min(1320px, calc(100% - 56px)); margin: auto; padding: 54px 0 57px; animation: rise .7s .1s both; }
+    .eyebrow { display: flex; align-items: center; gap: 9px; margin: 0 0 14px; color: #f0c982; font-size: 10px; font-weight: 600; letter-spacing: .17em; text-transform: uppercase; }
+    .eyebrow::before { content: ""; width: 25px; height: 1px; background: currentColor; }
+    .hero h1 { max-width: 550px; margin: 0; font-family: var(--serif); font-size: 60px; font-weight: 500; line-height: 1.03; }
+    .hero-copy { max-width: 420px; margin: 17px 0 25px; color: rgba(255,255,255,.85); font-size: 13px; line-height: 1.7; }
+    .hero-cta { display: inline-flex; align-items: center; gap: 12px; padding: 12px 17px; background: var(--sun); color: var(--forest-deep); font-size: 11px; font-weight: 700; transition: gap .2s ease, background .2s ease; }
+    .hero-cta:hover { gap: 18px; background: #f0ca84; }
+    .hero-cta svg { width: 15px; height: 15px; fill: none; stroke: currentColor; stroke-width: 1.8; }
+    .benefits { display: grid; grid-template-columns: repeat(3, 1fr); background: var(--white); border-bottom: 1px solid var(--line); }
+    .benefit { min-height: 54px; display: flex; justify-content: center; align-items: center; gap: 9px; padding: 10px; color: #47594d; font-size: 10px; letter-spacing: .03em; }
+    .benefit + .benefit { border-left: 1px solid var(--line); }
+    .benefit svg { width: 16px; height: 16px; fill: none; stroke: var(--orange); stroke-width: 1.5; stroke-linecap: round; stroke-linejoin: round; }
+    .collection { width: min(1320px, calc(100% - 56px)); margin: auto; padding: 50px 0 76px; }
+    .collection-heading { display: flex; align-items: end; justify-content: space-between; gap: 24px; margin-bottom: 27px; }
+    .crumb { display: flex; gap: 8px; margin-bottom: 10px; color: var(--muted); font-size: 10px; }
+    .crumb span:last-child { color: var(--ink); }
+    .collection-heading h2 { margin: 0; font-family: var(--serif); font-size: 34px; font-weight: 500; line-height: 1.1; }
+    .collection-heading p { margin: 8px 0 0; color: var(--muted); font-size: 12px; }
+    .collection-tools { display: flex; align-items: center; gap: 9px; }
+    .filter-toggle, .sort-select { height: 38px; display: inline-flex; align-items: center; gap: 9px; border: 1px solid var(--line); background: var(--white); color: var(--ink); padding: 0 12px; font-size: 11px; }
+    .filter-toggle { cursor: pointer; }
+    .filter-toggle svg { width: 15px; height: 15px; fill: none; stroke: currentColor; stroke-width: 1.6; }
+    .sort-select select { max-width: 145px; border: 0; outline: 0; color: var(--ink); background: transparent; font-size: 11px; cursor: pointer; }
+    .catalog { display: grid; grid-template-columns: 205px minmax(0, 1fr); gap: 31px; align-items: start; }
+    .filters { padding: 4px 0; }
+    .filters.desktop-hidden { display: none; }
+    .filter-section { padding: 0 0 20px; margin-bottom: 18px; border-bottom: 1px solid var(--line); }
+    .filter-section h3 { display: flex; justify-content: space-between; align-items: center; margin: 0 0 12px; font-size: 11px; font-weight: 700; }
+    .filter-section h3 span { color: #a7a498; font-size: 16px; font-weight: 400; }
+    .filter-options { display: grid; gap: 10px; }
+    .check-row { display: flex; align-items: center; gap: 9px; color: #5c625b; font-size: 11px; cursor: pointer; }
+    .check-row input { accent-color: var(--forest); width: 14px; height: 14px; margin: 0; }
+    .range-copy { display: flex; justify-content: space-between; margin-bottom: 11px; color: var(--muted); font-size: 10px; }
+    .price-range { width: 100%; accent-color: var(--forest); }
+    .filter-clear { padding: 0; border: 0; background: none; color: var(--orange); font-size: 10px; cursor: pointer; }
+    .catalog-topline { min-height: 25px; display: flex; align-items: center; justify-content: space-between; margin: 0 0 12px; color: var(--muted); font-size: 10px; }
+    .active-filter { color: var(--forest); }
+    .product-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 30px 18px; }
+    .product-card { min-width: 0; animation: rise .55s both; }
+    .product-media { position: relative; aspect-ratio: 4 / 4.65; overflow: hidden; background: #e7e2d7; }
+    .product-media img { width: 100%; height: 100%; display: block; object-fit: cover; transition: transform .55s cubic-bezier(.2,.7,.2,1); }
+    .product-card:hover .product-media img { transform: scale(1.045); }
+    .product-tag { position: absolute; top: 11px; left: 11px; padding: 6px 8px; background: rgba(255,254,250,.94); color: var(--forest); font-size: 9px; font-weight: 700; letter-spacing: .04em; text-transform: uppercase; }
+    .quick-add { position: absolute; right: 10px; bottom: 10px; left: 10px; height: 40px; display: flex; justify-content: space-between; align-items: center; padding: 0 13px; border: 0; background: var(--white); color: var(--ink); font-size: 10px; font-weight: 700; opacity: 0; transform: translateY(7px); transition: opacity .2s ease, transform .2s ease, background .2s ease; cursor: pointer; }
+    .product-card:hover .quick-add, .quick-add:focus-visible { opacity: 1; transform: translateY(0); }
+    .quick-add:hover { background: var(--sun); }
+    .quick-add svg { width: 16px; height: 16px; fill: none; stroke: currentColor; stroke-width: 1.8; }
+    .product-info { padding: 12px 1px 0; }
+    .product-category { margin: 0 0 6px; color: var(--muted); font-size: 9px; letter-spacing: .1em; text-transform: uppercase; }
+    .product-name { margin: 0 0 7px; font-family: var(--serif); font-size: 16px; font-weight: 500; line-height: 1.28; }
+    .product-rating { display: flex; align-items: center; gap: 6px; margin-bottom: 8px; color: var(--muted); font-size: 9px; }
+    .stars { color: #bd8542; letter-spacing: 1px; font-size: 11px; }
+    .product-new { color: var(--forest); font-size: 9px; font-weight: 600; }
+    .product-price { display: flex; align-items: center; gap: 8px; font-size: 12px; font-weight: 700; }
+    .product-price del { color: #a1a197; font-size: 10px; font-weight: 400; }
+    .empty-state { grid-column: 1 / -1; padding: 70px 15px; color: var(--muted); text-align: center; }
+    .empty-state h3 { margin: 0 0 8px; color: var(--ink); font-family: var(--serif); font-size: 23px; font-weight: 500; }
+    .story-band { display: grid; grid-template-columns: 1fr 1fr; min-height: 260px; background: #e9e5da; }
+    .story-image { min-height: 260px; background: url("https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?auto=format&fit=crop&w=1200&q=85") center 53% / cover; }
+    .story-copy { display: flex; flex-direction: column; justify-content: center; align-items: flex-start; padding: 42px clamp(25px, 7vw, 95px); }
+    .story-copy .eyebrow { color: var(--orange); }
+    .story-copy h2 { max-width: 390px; margin: 0; font-family: var(--serif); font-size: 32px; font-weight: 500; line-height: 1.15; }
+    .story-copy p { max-width: 400px; margin: 13px 0 19px; color: #62685f; font-size: 12px; line-height: 1.7; }
+    .text-link { display: inline-flex; align-items: center; gap: 9px; padding-bottom: 4px; border-bottom: 1px solid var(--orange); color: var(--forest); font-size: 10px; font-weight: 700; }
+    .text-link svg { width: 14px; height: 14px; fill: none; stroke: currentColor; stroke-width: 1.7; }
+    .newsletter { display: flex; justify-content: space-between; align-items: center; gap: 24px; padding: 34px max(28px, calc((100% - 1320px) / 2)); background: var(--forest); color: white; }
+    .newsletter h2 { margin: 0; font-family: var(--serif); font-size: 22px; font-weight: 500; }
+    .newsletter p { margin: 5px 0 0; color: rgba(255,255,255,.72); font-size: 10px; }
+    .signup-form { display: flex; width: min(390px, 50%); border-bottom: 1px solid rgba(255,255,255,.55); }
+    .signup-form input { flex: 1; min-width: 0; height: 39px; border: 0; outline: 0; background: transparent; color: white; font-size: 11px; }
+    .signup-form input::placeholder { color: rgba(255,255,255,.67); }
+    .signup-form button { border: 0; background: none; color: var(--sun); font-size: 10px; font-weight: 700; cursor: pointer; }
+    footer { display: flex; align-items: center; justify-content: space-between; gap: 20px; padding: 21px max(28px, calc((100% - 1320px) / 2)); background: var(--forest-deep); color: rgba(255,255,255,.74); font-size: 9px; }
+    .footer-links { display: flex; gap: 18px; }
+    .drawer-backdrop { position: fixed; z-index: 10; inset: 0; background: rgba(18,28,23,.44); opacity: 0; visibility: hidden; transition: opacity .22s, visibility .22s; }
+    .drawer-backdrop.open { opacity: 1; visibility: visible; }
+    .cart-drawer, .search-drawer { position: fixed; z-index: 11; top: 0; right: 0; bottom: 0; width: min(420px, 100%); display: flex; flex-direction: column; background: var(--white); transform: translateX(102%); transition: transform .28s cubic-bezier(.2,.7,.2,1); }
+    .cart-drawer.open, .search-drawer.open { transform: translateX(0); }
+    .drawer-head { min-height: 66px; display: flex; justify-content: space-between; align-items: center; padding: 0 22px; border-bottom: 1px solid var(--line); }
+    .drawer-head h2 { margin: 0; font-family: var(--serif); font-size: 22px; font-weight: 500; }
+    .drawer-close { width: 35px; height: 35px; display: grid; place-items: center; border: 0; background: transparent; cursor: pointer; }
+    .drawer-close svg { width: 19px; height: 19px; fill: none; stroke: currentColor; stroke-width: 1.5; }
+    .cart-items { flex: 1; overflow-y: auto; padding: 8px 22px; }
+    .cart-empty { padding: 45px 0; color: var(--muted); text-align: center; font-size: 12px; }
+    .cart-line { display: grid; grid-template-columns: 68px 1fr auto; gap: 12px; padding: 15px 0; border-bottom: 1px solid var(--line); }
+    .cart-line img { width: 68px; height: 82px; object-fit: cover; background: #e7e2d7; }
+    .cart-line h3 { margin: 1px 0 6px; font-family: var(--serif); font-size: 14px; font-weight: 500; }
+    .cart-line p { margin: 0; color: var(--muted); font-size: 10px; }
+    .qty-control { display: inline-flex; align-items: center; gap: 10px; margin-top: 10px; border: 1px solid var(--line); }
+    .qty-control button { width: 25px; height: 25px; border: 0; background: none; cursor: pointer; }
+    .qty-control span { min-width: 10px; text-align: center; font-size: 10px; }
+    .cart-line-price { padding-top: 2px; font-size: 11px; font-weight: 700; }
+    .cart-foot { padding: 18px 22px 22px; border-top: 1px solid var(--line); }
+    .cart-subtotal { display: flex; justify-content: space-between; margin-bottom: 9px; font-size: 12px; font-weight: 700; }
+    .cart-note { margin: 0 0 16px; color: var(--muted); font-size: 10px; }
+    .checkout-button { width: 100%; height: 46px; border: 0; background: var(--forest); color: white; font-size: 11px; font-weight: 700; cursor: pointer; }
+    .checkout-button:hover { background: var(--forest-deep); }
+    .search-body { padding: 22px; }
+    .search-field { width: 100%; height: 47px; padding: 0 13px; border: 1px solid var(--line); outline-color: var(--forest); background: var(--paper); font-size: 12px; }
+    .search-hint { margin-top: 11px; color: var(--muted); font-size: 10px; }
+    .toast { position: fixed; z-index: 20; right: 22px; bottom: 22px; max-width: calc(100% - 44px); padding: 13px 17px; background: var(--forest-deep); color: white; box-shadow: 0 8px 25px #1a302633; font-size: 11px; opacity: 0; transform: translateY(10px); pointer-events: none; transition: .22s; }
+    .toast.show { opacity: 1; transform: translateY(0); }
+    @keyframes rise { from { opacity: 0; transform: translateY(13px); } to { opacity: 1; transform: translateY(0); } }
+    @keyframes settle { from { transform: scale(1.06); } to { transform: scale(1.015); } }
+    @media (max-width: 900px) {
+      .header-inner, .hero-content, .collection { width: min(100% - 36px, 760px); }
+      .header-nav { gap: 14px; }
+      .catalog { grid-template-columns: 170px minmax(0,1fr); gap: 20px; }
+      .product-grid { grid-template-columns: repeat(2, minmax(0,1fr)); gap: 26px 15px; }
+      .story-copy { padding: 34px; }
+    }
+    @media (max-width: 640px) {
+      .announcement { min-height: 32px; font-size: 9px; }
+      .header-inner { width: calc(100% - 28px); min-height: 65px; grid-template-columns: 1fr auto 1fr; gap: 7px; }
+      .header-nav { display: none; }
+      .mobile-menu { display: grid; justify-self: start; }
+      .brand-mark { width: 27px; height: 27px; }
+      .brand-name { font-size: 15px; }
+      .header-actions { gap: 3px; }
+      .icon-button { width: 34px; height: 34px; }
+      .hero { min-height: 325px; }
+      .hero::before { background-position: 56% center; }
+      .hero::after { background: linear-gradient(90deg, rgba(18,37,30,.79), rgba(24,45,37,.31)); }
+      .hero-content { width: calc(100% - 36px); padding: 43px 0; }
+      .hero h1 { max-width: 370px; font-size: 45px; }
+      .hero-copy { max-width: 330px; font-size: 12px; }
+      .benefit { min-height: 62px; flex-direction: column; gap: 4px; font-size: 8px; text-align: center; }
+      .benefit svg { width: 15px; height: 15px; }
+      .collection { width: calc(100% - 32px); padding: 37px 0 53px; }
+      .collection-heading { align-items: flex-start; flex-direction: column; gap: 16px; margin-bottom: 20px; }
+      .collection-heading h2 { font-size: 30px; }
+      .collection-heading p { font-size: 11px; }
+      .collection-tools { width: 100%; justify-content: space-between; }
+      .filter-toggle, .sort-select { height: 36px; }
+      .catalog { display: flex; flex-direction: column; gap: 0; }
+      .filters { display: none; width: 100%; padding: 16px; margin-bottom: 17px; background: var(--white); border: 1px solid var(--line); }
+      .filters.open { display: block; }
+      .filter-section:last-child { margin-bottom: 0; padding-bottom: 0; border-bottom: 0; }
+      .catalog-main { width: 100%; }
+      .product-grid { grid-template-columns: repeat(2, minmax(0,1fr)); gap: 23px 11px; }
+      .product-media { aspect-ratio: 4 / 4.9; }
+      .product-tag { top: 7px; left: 7px; padding: 5px 6px; font-size: 8px; }
+      .quick-add { right: 6px; bottom: 6px; left: 6px; height: 34px; padding: 0 9px; font-size: 9px; opacity: 1; transform: none; }
+      .quick-add svg { width: 14px; height: 14px; }
+      .product-info { padding-top: 9px; }
+      .product-name { min-height: 39px; font-size: 14px; }
+      .product-category { font-size: 8px; }
+      .product-rating { font-size: 8px; }
+      .story-band { grid-template-columns: 1fr; }
+      .story-image { min-height: 195px; }
+      .story-copy { padding: 28px 22px 32px; }
+      .story-copy h2 { font-size: 29px; }
+      .newsletter { align-items: flex-start; flex-direction: column; gap: 19px; padding: 26px 20px; }
+      .signup-form { width: 100%; }
+      footer { align-items: flex-start; flex-direction: column; gap: 13px; padding: 18px 20px; }
+      .footer-links { flex-wrap: wrap; gap: 14px; }
+    }
+    @media (prefers-reduced-motion: reduce) {
+      *, *::before, *::after { scroll-behavior: auto !important; animation-duration: .01ms !important; animation-iteration-count: 1 !important; transition-duration: .01ms !important; }
+    }
+  </style>
+</head>
+<body>
+  <div class="announcement" id="top">A little piece of the mountains, delivered to your door <strong>·</strong> Free delivery on orders over Rs. 5,000</div>
+  <header class="site-header">
+    <div class="header-inner">
+      <nav class="header-nav" aria-label="Main navigation">
+        <a href="#collection">Shop all</a>
+        <a href="#collection" data-nav-category="Pantry">Pantry</a>
+        <a href="#collection" data-nav-category="Handmade">Handmade</a>
+      </nav>
+      <button class="icon-button mobile-menu" type="button" aria-label="Browse the shop" id="mobileMenu">
+        <svg viewBox="0 0 24 24"><path d="M4 7h16M4 12h16M4 17h16"/></svg>
+      </button>
+      <a class="brand" href="#top" aria-label="Skardu Gifts home">
+        <svg class="brand-mark" viewBox="0 0 40 40" aria-hidden="true"><path d="M5 16h30v20H5z" fill="#171717"/><path d="M18 16h4v20h-4z" fill="#d69b24"/><path d="M3 12h34v6H3z" fill="#d69b24"/><path d="M20 12c-5-1-9-4-9-7 0-4 6-5 9 7Zm0 0c5-1 9-4 9-7 0-4-6-5-9 7Z" fill="none" stroke="#d69b24" stroke-width="2.6" stroke-linejoin="round"/></svg>
+        <span class="brand-name">Skardu<small>Gifts</small></span>
+      </a>
+      <div class="header-actions">
+        <button class="icon-button" type="button" aria-label="Search gifts" id="openSearch"><svg viewBox="0 0 24 24"><circle cx="10.8" cy="10.8" r="6.8"/><path d="m16 16 4.5 4.5"/></svg></button>
+        <button class="icon-button" type="button" aria-label="Open shopping bag" id="openCart"><svg viewBox="0 0 24 24"><path d="M5 8h14l1 12H4L5 8Z"/><path d="M9 9V6a3 3 0 0 1 6 0v3"/></svg><span class="cart-count" id="cartCount">0</span></button>
+      </div>
+    </div>
+  </header>
+  <main>
+    <section class="hero" aria-label="Skardu Gift collection">
+      <div class="hero-content">
+        <p class="eyebrow">Gifts from the high country</p>
+        <h1>A little wonder<br>from Skardu.</h1>
+        <p class="hero-copy">Good things made, gathered and grown in the valleys we call home. Send a thoughtful piece of Baltistan to someone you love.</p>
+        <a class="hero-cta" href="#collection">Explore the collection <svg viewBox="0 0 20 20"><path d="M3 10h13M11 4l6 6-6 6"/></svg></a>
+      </div>
+    </section>
+    <section class="benefits" aria-label="Shopping benefits">
+      <div class="benefit"><svg viewBox="0 0 24 24"><path d="M3 7h11v11H3zM14 11h4l3 3v4h-7z"/><circle cx="7.5" cy="19" r="1.5"/><circle cx="17.5" cy="19" r="1.5"/></svg><span>Thoughtfully packed in Skardu</span></div>
+      <div class="benefit"><svg viewBox="0 0 24 24"><path d="m12 3 2.2 5.5L20 11l-5.8 2.3L12 19l-2.2-5.7L4 11l5.8-2.5L12 3Z"/><path d="m19 16 .9 2.1L22 19l-2.1.9L19 22l-.9-2.1L16 19l2.1-.9L19 16Z"/></svg><span>Small-batch & locally made</span></div>
+      <div class="benefit"><svg viewBox="0 0 24 24"><path d="M20.8 8.7c0 5.3-8.8 11.1-8.8 11.1S3.2 14 3.2 8.7A4.7 4.7 0 0 1 12 6a4.7 4.7 0 0 1 8.8 2.7Z"/></svg><span>Made to give, lovely to keep</span></div>
+    </section>
+    <section class="collection" id="collection">
+      <div class="collection-heading">
+        <div>
+          <div class="crumb"><a href="#top">Home</a><span>/</span><span>Shop the collection</span></div>
+          <h2>Small treasures, big heart.</h2>
+          <p>Handpicked gifts and everyday favourites from Baltistan.</p>
+        </div>
+        <div class="collection-tools">
+          <button class="filter-toggle" id="filterToggle" type="button" aria-expanded="true"><svg viewBox="0 0 20 20"><path d="M3 5h14M5.5 10h9M8 15h4"/></svg><span>Filter</span></button>
+          <label class="sort-select"><span>Sort:</span><select id="sortSelect" aria-label="Sort products"><option value="featured">Featured</option><option value="low">Price: low to high</option><option value="high">Price: high to low</option><option value="az">Name: A to Z</option></select></label>
+        </div>
+      </div>
+      <div class="catalog">
+        <aside class="filters" id="filters" aria-label="Product filters">
+          <section class="filter-section">
+            <h3>Category <span>−</span></h3>
+            <div class="filter-options" id="categoryFilters">
+              <label class="check-row"><input type="checkbox" value="Pantry"> Pantry <small>(2)</small></label>
+              <label class="check-row"><input type="checkbox" value="Handmade"> Handmade <small>(2)</small></label>
+              <label class="check-row"><input type="checkbox" value="Home"> Home & living <small>(1)</small></label>
+              <label class="check-row"><input type="checkbox" value="Jewelry"> Jewelry <small>(1)</small></label>
+              <label class="check-row"><input type="checkbox" value="Wellness"> Wellness <small>(1)</small></label>
+            </div>
+          </section>
+          <section class="filter-section">
+            <h3>Availability <span>−</span></h3>
+            <div class="filter-options"><label class="check-row"><input type="checkbox" id="inStockOnly"> In stock</label></div>
+          </section>
+          <section class="filter-section">
+            <h3>Price range <span>−</span></h3>
+            <div class="range-copy"><span>Up to</span><span id="priceValue">Rs. 8,000</span></div>
+            <input class="price-range" id="priceRange" type="range" min="500" max="8000" step="100" value="8000" aria-label="Maximum price">
+          </section>
+          <button class="filter-clear" type="button" id="clearFilters">Clear all filters</button>
+        </aside>
+        <div class="catalog-main">
+          <div class="catalog-topline"><span id="resultCount">7 pieces to make someone smile</span><span class="active-filter" id="activeFilter"></span></div>
+          <div class="product-grid" id="productGrid" aria-live="polite"></div>
+        </div>
+      </div>
+    </section>
+    <section class="story-band" id="our-story">
+      <div class="story-image" role="img" aria-label="Mountain valley beneath an open sky"></div>
+      <div class="story-copy">
+        <p class="eyebrow">From our valley to yours</p>
+        <h2>Good gifts carry a little story.</h2>
+        <p>We work with makers and growers around Skardu to bring you honest, useful things with a sense of place. Every order helps keep a small tradition moving forward.</p>
+        <a class="text-link" href="#collection">Meet the collection <svg viewBox="0 0 20 20"><path d="M3 10h13M11 4l6 6-6 6"/></svg></a>
+      </div>
+    </section>
+    <section class="newsletter">
+      <div><h2>A note from the mountains.</h2><p>New finds, seasonal favourites and little reasons to celebrate.</p></div>
+      <form class="signup-form" id="signupForm"><input type="email" placeholder="Your email address" aria-label="Your email address" required><button type="submit">JOIN THE LIST <span aria-hidden="true">→</span></button></form>
+    </section>
+  </main>
+  <footer><span>© 2026 Skardu Gifts. Thoughtfully gathered in Baltistan.</span><nav class="footer-links" aria-label="Footer navigation"><a href="#our-story">Our story</a><a href="mailto:hello@skardugift.com">Contact</a><a href="#collection">Shipping & returns</a></nav></footer>
+
+  <div class="drawer-backdrop" id="drawerBackdrop"></div>
+  <aside class="cart-drawer" id="cartDrawer" aria-label="Shopping bag" aria-hidden="true">
+    <div class="drawer-head"><h2>Your bag <span id="drawerCount">(0)</span></h2><button class="drawer-close" type="button" aria-label="Close shopping bag" data-close><svg viewBox="0 0 24 24"><path d="m6 6 12 12M18 6 6 18"/></svg></button></div>
+    <div class="cart-items" id="cartItems"></div>
+    <div class="cart-foot"><div class="cart-subtotal"><span>Subtotal</span><span id="cartSubtotal">Rs. 0</span></div><p class="cart-note">Shipping and taxes are calculated at checkout.</p><button class="checkout-button" id="checkoutButton" type="button">Continue to checkout</button></div>
+  </aside>
+  <aside class="search-drawer" id="searchDrawer" aria-label="Search products" aria-hidden="true">
+    <div class="drawer-head"><h2>Find a little something</h2><button class="drawer-close" type="button" aria-label="Close search" data-close><svg viewBox="0 0 24 24"><path d="m6 6 12 12M18 6 6 18"/></svg></button></div>
+    <div class="search-body"><input class="search-field" id="searchInput" type="search" placeholder="Try apricot, wool, keepsake..." autocomplete="off"><p class="search-hint">Search gifts from Skardu</p></div>
+  </aside>
+  <div class="toast" id="toast" role="status" aria-live="polite"></div>
+
+  <script>
+    const products = [
+      { id: "apricot-box", name: "Wild apricot preserve, gift jar", category: "Pantry", price: 1850, oldPrice: 2200, tag: "Valley favourite", rating: "4.9", reviews: 28, stock: true, image: "https://images.unsplash.com/photo-1785605121107-677f10a463f6?auto=format&fit=crop&w=850&q=82", alt: "Jar of golden apricot preserve" },
+      { id: "woven-stole", name: "Handwoven wool wrap", category: "Handmade", price: 4800, oldPrice: null, tag: "Made by hand", rating: "5.0", reviews: 12, stock: true, image: "https://images.unsplash.com/photo-1512436991641-6745cdb1723f?auto=format&fit=crop&w=850&q=82", alt: "Soft woven textiles in warm natural colours" },
+      { id: "apricot-honey", name: "Wildflower honey jar", category: "Pantry", price: 1450, oldPrice: null, tag: "Small batch", rating: "4.8", reviews: 19, stock: true, image: "https://images.unsplash.com/photo-1555211652-5c6222f971bc?auto=format&fit=crop&w=850&q=82", alt: "Glass jar of golden honey" },
+      { id: "turquoise-studs", name: "Turquoise keepsake studs", category: "Jewelry", price: 3200, oldPrice: null, tag: "One of a kind", rating: "4.9", reviews: 8, stock: true, image: "https://images.unsplash.com/photo-1535632066927-ab7c9ab60908?auto=format&fit=crop&w=850&q=82", alt: "Hand-finished gemstone earrings" },
+      { id: "carved-board", name: "Carved apricot-wood board", category: "Home", price: 5600, oldPrice: null, tag: "Local wood", rating: "5.0", reviews: 6, stock: true, image: "https://images.unsplash.com/photo-1721934081906-a92cdc010b75?auto=format&fit=crop&w=850&q=82", alt: "Wooden cutting board on a table" },
+      { id: "kernel-oil", name: "Cold-pressed kernel oil", category: "Handmade", price: 2100, oldPrice: 2500, tag: "Grown in Baltistan", rating: "4.9", reviews: 15, stock: true, image: "https://images.unsplash.com/photo-1608571423902-eed4a5ad8108?auto=format&fit=crop&w=850&q=82", alt: "Amber glass bottle of natural oil" },
+      { id: "shilajit-resin", name: "Himalayan Shilajit Resin, 10 g", category: "Wellness", price: 1800, oldPrice: null, tag: "From the high mountains", rating: "New", reviews: 0, stock: true, image: "https://images.unsplash.com/photo-1608248543803-ba4f8c70ae0b?auto=format&fit=crop&w=850&q=82", alt: "Small jar of natural resin" }
+    ];
+    const cart = new Map();
+    const grid = document.getElementById("productGrid");
+    const filters = document.getElementById("filters");
+    const searchInput = document.getElementById("searchInput");
+    const formatPrice = amount => `Rs. ${amount.toLocaleString("en-PK")}`;
+    let toastTimer;
+
+    function renderProducts() {
+      const selected = [...document.querySelectorAll("#categoryFilters input:checked")].map(input => input.value);
+      const maxPrice = Number(document.getElementById("priceRange").value);
+      const stockOnly = document.getElementById("inStockOnly").checked;
+      const query = searchInput.value.trim().toLowerCase();
+      const sort = document.getElementById("sortSelect").value;
+      let visible = products.filter(product => (!selected.length || selected.includes(product.category)) && product.price <= maxPrice && (!stockOnly || product.stock) && (!query || `${product.name} ${product.category} ${product.tag}`.toLowerCase().includes(query)));
+      if (sort === "low") visible.sort((a, b) => a.price - b.price);
+      if (sort === "high") visible.sort((a, b) => b.price - a.price);
+      if (sort === "az") visible.sort((a, b) => a.name.localeCompare(b.name));
+      document.getElementById("resultCount").textContent = `${visible.length} ${visible.length === 1 ? "piece" : "pieces"} to make someone smile`;
+      document.getElementById("activeFilter").textContent = query ? `Matching “${query}”` : selected.length ? selected.join(" · ") : "";
+      grid.innerHTML = visible.length ? visible.map((product, index) => `
+        <article class="product-card" style="animation-delay:${Math.min(index * 55, 220)}ms">
+          <div class="product-media"><img src="${product.image}" alt="${product.alt}" loading="lazy"><span class="product-tag">${product.tag}</span><button class="quick-add" type="button" data-add="${product.id}" aria-label="Add ${product.name} to bag">Add to bag <svg viewBox="0 0 20 20"><path d="M10 3v14M3 10h14"/></svg></button></div>
+          <div class="product-info"><p class="product-category">${product.category}</p><h3 class="product-name">${product.name}</h3><div class="product-rating">${product.reviews ? `<span class="stars" aria-label="${product.rating} out of 5 stars">★★★★★</span><span>${product.reviews} notes</span>` : `<span class="product-new">Just added</span>`}</div><div class="product-price">${formatPrice(product.price)}${product.oldPrice ? `<del>${formatPrice(product.oldPrice)}</del>` : ""}</div></div>
+        </article>`).join("") : `<div class="empty-state"><h3>No little treasures found.</h3><p>Try a different filter or clear your search.</p></div>`;
+    }
+
+    function renderCart() {
+      const count = [...cart.values()].reduce((sum, item) => sum + item.quantity, 0);
+      const subtotal = [...cart.values()].reduce((sum, item) => sum + item.product.price * item.quantity, 0);
+      document.getElementById("cartCount").textContent = count;
+      document.getElementById("drawerCount").textContent = `(${count})`;
+      document.getElementById("cartSubtotal").textContent = formatPrice(subtotal);
+      document.getElementById("cartItems").innerHTML = cart.size ? [...cart.values()].map(({ product, quantity }) => `
+        <div class="cart-line"><img src="${product.image}" alt=""><div><h3>${product.name}</h3><p>${formatPrice(product.price)}</p><div class="qty-control"><button type="button" data-qty="-1" data-id="${product.id}" aria-label="Remove one ${product.name}">−</button><span>${quantity}</span><button type="button" data-qty="1" data-id="${product.id}" aria-label="Add one ${product.name}">+</button></div></div><span class="cart-line-price">${formatPrice(product.price * quantity)}</span></div>`).join("") : `<div class="cart-empty">Your bag is waiting for a little something.</div>`;
+      document.getElementById("checkoutButton").disabled = !count;
+      document.getElementById("checkoutButton").style.opacity = count ? "1" : ".55";
+    }
+
+    function showToast(message) {
+      const toast = document.getElementById("toast");
+      toast.textContent = message;
+      toast.classList.add("show");
+      clearTimeout(toastTimer);
+      toastTimer = setTimeout(() => toast.classList.remove("show"), 2300);
+    }
+
+    function openDrawer(drawer) {
+      document.getElementById("drawerBackdrop").classList.add("open");
+      drawer.classList.add("open");
+      drawer.setAttribute("aria-hidden", "false");
+      document.body.style.overflow = "hidden";
+    }
+    function closeDrawers() {
+      document.getElementById("drawerBackdrop").classList.remove("open");
+      document.querySelectorAll(".cart-drawer, .search-drawer").forEach(drawer => { drawer.classList.remove("open"); drawer.setAttribute("aria-hidden", "true"); });
+      document.body.style.overflow = "";
+    }
+
+    grid.addEventListener("click", event => {
+      const button = event.target.closest("[data-add]");
+      if (!button) return;
+      const product = products.find(item => item.id === button.dataset.add);
+      const existing = cart.get(product.id);
+      cart.set(product.id, { product, quantity: (existing?.quantity || 0) + 1 });
+      renderCart();
+      showToast(`${product.name} added to your bag`);
+    });
+    document.getElementById("cartItems").addEventListener("click", event => {
+      const button = event.target.closest("[data-qty]");
+      if (!button) return;
+      const item = cart.get(button.dataset.id);
+      item.quantity += Number(button.dataset.qty);
+      if (item.quantity < 1) cart.delete(button.dataset.id);
+      renderCart();
+    });
+    document.getElementById("openCart").addEventListener("click", () => openDrawer(document.getElementById("cartDrawer")));
+    document.getElementById("openSearch").addEventListener("click", () => { openDrawer(document.getElementById("searchDrawer")); searchInput.focus(); });
+    document.getElementById("drawerBackdrop").addEventListener("click", closeDrawers);
+    document.querySelectorAll("[data-close]").forEach(button => button.addEventListener("click", closeDrawers));
+    document.addEventListener("keydown", event => { if (event.key === "Escape") closeDrawers(); });
+    document.querySelectorAll("#categoryFilters input, #inStockOnly, #priceRange, #sortSelect").forEach(input => input.addEventListener("input", () => {
+      document.getElementById("priceValue").textContent = formatPrice(Number(document.getElementById("priceRange").value));
+      renderProducts();
+    }));
+    searchInput.addEventListener("input", renderProducts);
+    document.getElementById("filterToggle").addEventListener("click", event => {
+      const isOpen = window.innerWidth > 640
+        ? !filters.classList.toggle("desktop-hidden")
+        : filters.classList.toggle("open");
+      event.currentTarget.setAttribute("aria-expanded", String(isOpen));
+    });
+    document.getElementById("clearFilters").addEventListener("click", () => {
+      document.querySelectorAll("#categoryFilters input, #inStockOnly").forEach(input => input.checked = false);
+      document.getElementById("priceRange").value = "8000";
+      document.getElementById("priceValue").textContent = formatPrice(8000);
+      searchInput.value = "";
+      renderProducts();
+    });
+    document.querySelectorAll("[data-nav-category]").forEach(link => link.addEventListener("click", () => {
+      document.querySelectorAll("#categoryFilters input").forEach(input => input.checked = input.value === link.dataset.navCategory);
+      renderProducts();
+    }));
+    document.getElementById("mobileMenu").addEventListener("click", () => { filters.classList.add("open"); document.getElementById("filterToggle").setAttribute("aria-expanded", "true"); document.getElementById("collection").scrollIntoView({ behavior: "smooth" }); });
+    document.getElementById("signupForm").addEventListener("submit", event => { event.preventDefault(); event.currentTarget.reset(); showToast("You're on the list. See you in your inbox."); });
+    document.getElementById("checkoutButton").addEventListener("click", () => showToast("Checkout is ready to connect to your payment provider."));
+    if (window.innerWidth <= 640) document.getElementById("filterToggle").setAttribute("aria-expanded", "false");
+    renderProducts();
+    renderCart();
+  </script>
+</body>
+</html>
